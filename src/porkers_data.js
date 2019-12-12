@@ -4,7 +4,7 @@ const hogs = [
     specialty: "Mediocre magic",
     greased: false,
     weight: 2.0,
-    "highest medal achieved": "bronze",
+    "highest medal achieved": "🥉",
     img: "./hog-imgs/mudblood.jpg"
   },
   {
@@ -12,7 +12,7 @@ const hogs = [
     specialty: "Making friends",
     greased: true,
     weight: 1.6,
-    "highest medal achieved": "silver",
+    "highest medal achieved": "🥈",
     img: "./hog-imgs/porkchop.jpg"
   },
   {
@@ -20,7 +20,7 @@ const hogs = [
     specialty: "truffle finder",
     greased: false,
     weight: 0.7,
-    "highest medal achieved": "gold",
+    "highest medal achieved": "🥇",
     img: "./hog-imgs/cherub.jpg"
   },
   {
@@ -28,7 +28,7 @@ const hogs = [
     specialty: "Massivity",
     greased: true,
     weight: 5.1,
-    "highest medal achieved": "platinum",
+    "highest medal achieved": "🎖",
     img: "./hog-imgs/piggy_smalls.jpg"
   },
   {
@@ -36,7 +36,7 @@ const hogs = [
     specialty: "Racing",
     greased: true,
     weight: 1.7,
-    "highest medal achieved": "gold",
+    "highest medal achieved": "🥇",
     img: "./hog-imgs/trouble.jpg"
   },
   {
@@ -44,7 +44,7 @@ const hogs = [
     specialty: "Expert Witness",
     greased: false,
     weight: 2.2,
-    "highest medal achieved": "silver",
+    "highest medal achieved": "🥈",
     img: "./hog-imgs/sobriety.jpg"
   },
   {
@@ -52,7 +52,7 @@ const hogs = [
     specialty: "Union Busting",
     greased: false,
     weight: 3.7,
-    "highest medal achieved": "wood",
+    "highest medal achieved": "🐖",
     img: "./hog-imgs/rainbowdash.jpg"
   },
   {
@@ -60,7 +60,7 @@ const hogs = [
     specialty: "Finding truffles",
     greased: true,
     weight: 4.0,
-    "highest medal achieved": "gold",
+    "highest medal achieved": "🥇",
     img: "./hog-imgs/truffleshuffle.jpg"
   },
   {
@@ -68,7 +68,7 @@ const hogs = [
     specialty: "Hamphlet Distribution",
     greased: false,
     weight: 2.8,
-    "highest medal achieved": "diamond",
+    "highest medal achieved": "💎",
     img: "./hog-imgs/bay_of_pigs.jpg"
   },
   {
@@ -76,7 +76,7 @@ const hogs = [
     specialty: "truffle finder",
     greased: false,
     weight: 2.3,
-    "highest medal achieved": "bronze",
+    "highest medal achieved": "🥉",
     img: "./hog-imgs/the_prosciutto_concern.jpg"
   },
   {
@@ -84,7 +84,7 @@ const hogs = [
     specialty: "Airport Security",
     greased: true,
     weight: 1.9,
-    "highest medal achieved": "diamond",
+    "highest medal achieved": "💎",
     img: "./hog-imgs/galaxy_note.jpg"
   },
   {
@@ -92,7 +92,7 @@ const hogs = [
     specialty: "Babysitting",
     greased: true,
     weight: 3.3,
-    "highest medal achieved": "platinum",
+    "highest medal achieved": "🎖",
     img: "./hog-imgs/leggo_my_eggo.jpg"
   },
   {
@@ -100,7 +100,7 @@ const hogs = [
     specialty: "Vacuum tubes",
     greased: true,
     weight: 4.1,
-    "highest medal achieved": "wood",
+    "highest medal achieved": "🐖",
     img: "./hog-imgs/augustus_gloop.jpg"
   }
 ];
