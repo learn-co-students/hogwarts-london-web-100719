@@ -1,17 +1,24 @@
-import React, { Component } from 'react';
-import '../App.css';
-import Nav from './Nav'
-import hogs from '../porkers_data';
+import React, { Component } from "react";
+import "../App.css";
+import Nav from "./Nav";
+import HogList from "./HogList";
+import hogs from "../porkers_data";
 
-class App extends Component {
+export default class App extends Component {
+
+  constructor() {
+    super()
+    this.state = {
+      hogs: { hogs }
+    }
+  }
+
   render() {
     return (
       <div className="App">
-          < Nav />
-
+        <Nav />
+        <HogList hogsData={this.state.hogs} />
       </div>
-    )
+    );
   }
 }
-
-export default App;
