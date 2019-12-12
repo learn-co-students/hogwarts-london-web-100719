@@ -8,7 +8,12 @@ export class HogCard extends Component {
     };
   }
 
-  handleClick = () => {
+  handleShowClick = () => {
+    let current = this.state.showDetails;
+    this.setState({ showDetails: !current });
+  };
+
+  handleShowClick = () => {
     let current = this.state.showDetails;
     this.setState({ showDetails: !current });
   };
@@ -16,12 +21,12 @@ export class HogCard extends Component {
   render() {
     return (
       <div className="ui eight wide column">
-        <div className="pigTile">
-          <div class="image">
-            <img src={this.props.hog.img} onClick={this.handleClick} />
+        <div className="ui raised card">
+          <div className="image">
+            <img src={this.props.hog.img} onClick={this.handleShowClick} />
           </div>
-          <div class="content">
-            <h3 class="header">
+          <div className="content">
+            <h3 className="header">
               {this.props.hog.name} - {this.props.hog.weight}kg
             </h3>
             {this.state.showDetails ? (
@@ -35,6 +40,13 @@ export class HogCard extends Component {
               </div>
             ) : null}
           </div>
+          <br />
+          <button
+            className="ui button"
+            onClick={() => this.props.hideHog(this.props.hog.name)}
+          >
+            Hide Hog
+          </button>
         </div>
       </div>
     );

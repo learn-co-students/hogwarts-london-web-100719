@@ -5,11 +5,20 @@ import FilterMenu from "./FilterMenu";
 class HogsContainer extends Component {
   constructor(props) {
     super(props);
-    this.state = {
+    let init = {
       hogs: this.props.hogs,
       selectedHogs: this.props.hogs
     };
+    this.state = init;
   }
+
+  hideHog = name => {
+    let hogs = this.state.hogs;
+    let selectedHogs = this.state.selectedHogs;
+    hogs = hogs.filter(hog => hog.name !== name);
+    selectedHogs = selectedHogs.filter(hog => hog.name !== name);
+    this.setState({ hogs: hogs, selectedHogs: selectedHogs });
+  };
 
   sortByName = () => {
     let hogs = this.state.hogs;
@@ -38,7 +47,7 @@ class HogsContainer extends Component {
           filterForGreased={this.filterForGreased}
         />
         {this.state.selectedHogs.map(hog => {
-          return <HogCard hog={hog} />;
+          return <HogCard hog={hog} key={hog.name} hideHog={this.hideHog} />;
         })}
       </div>
     );
