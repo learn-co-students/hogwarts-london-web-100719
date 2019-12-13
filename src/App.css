@@ -83,6 +83,8 @@ ul {
   outline: #3B0B0B dotted thick;
   transition: 0.75s;
   opacity: 1;
+  height: 300px;
+  width: 270px;
 }
 
 .minBackgroundSneak {
