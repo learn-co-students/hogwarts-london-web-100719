@@ -4,23 +4,18 @@ import HogImg from './HogImg';
 
 export default class HogTile extends Component {
     
-    
-    showDescription = (specialty, weight, medal, greased) => {
-        console.log(specialty)
-            {/* `Weight: ${weight}`
-            `Heighest Medal Achieved: ${medal}`
-            `Greased: ${greased === true ? "yes" : "no"}` */}
+    state ={
+        togglePic: true
     }
     
+    
     render() {
-        let {greased, medal, name, specialty, weight} = this.props.hog
-        const fileName = name.toLowerCase().replace(/ /g, '_')
+        const fileName = this.props.hog.name.toLowerCase().replace(/ /g, '_')
         const src = require(`../hog-imgs/${fileName}.jpg`)
-        console.log('source of image:', src)
     return (
-      <div className = "pigTile" greased = {greased}>
-        <h3 onClick = {() => this.showDescription(specialty, weight, medal, greased)}> {name}</h3>
-        <HogImg src={src}/>
+      <div className = "pigTile" greased = {this.props.hog.greased}>
+        <h3 onClick = {() => this.setState({togglePic: !this.state.togglePic})}> {this.props.hog.name}</h3>
+        {this.state.togglePic ? <HogImg src={src}/> : <HogDescription hog = {this.props.hog} />}
 
       </div>
     )
