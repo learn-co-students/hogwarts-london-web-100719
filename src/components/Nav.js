@@ -1,7 +1,7 @@
 import piggy from '../porco.png'
 import React from 'react'
 
-const Nav = () => {
+const Nav = ({setSorted, setFiltered}) => {
 	return (
 		<div className="navWrapper">
 			<span className="headerText">Hogwarts</span>
@@ -9,6 +9,11 @@ const Nav = () => {
 				<img src={piggy} className="App-logo" alt="piggy" />
 			</div>
 			<span className="normalText">A React App for County Fair Hog Fans</span>
+			<p>
+				<button onClick={setFiltered}>Filter by Greased</button>
+				<button onClick={()=> setSorted("name")}>Sort by Name</button>
+				<button onClick={()=> setSorted("weight")}>Sory by Weight</button>
+			</p>
 		</div>
 	)
 }
