@@ -24,18 +24,24 @@ export default class App extends Component {
   };
 
   hideHog = name => {
-    this.setState({ hidden: [...this.state.hidden, name] });
+    this.setState({
+      hidden: [...this.state.hidden, name]
+    });
   };
 
   hiddenHogs = () => {
     const newHogs = [...hogs];
     const { hidden } = this.state;
-    if (hidden.length) return newHogs.filter(hog => !hidden.includes(hog.name));
+
+    if (hidden.length) {
+      return newHogs.filter(hog => !hidden.includes(hog.name))
+    }
     return newHogs;
   };
 
   filteredHogs = () => {
     const newHogs = [...this.hiddenHogs()];
+
     if (this.state.filtered) {
       return newHogs.filter(hog => hog.greased);
     }
@@ -47,13 +53,12 @@ export default class App extends Component {
     const { sorted } = this.state;
 
     if (sorted === "name") {
-      return newHogs.sort((a, b) => a.name.localeCompare(b.name)) 
+      return newHogs.sort((a, b) => a.name.localeCompare(b.name));
     }
 
     if (sorted === "weight") {
-      return newHogs.sort((a, b) => a.weight - b.weight)
+      return newHogs.sort((a, b) => a.weight - b.weight);
     }
-
     return newHogs;
   };
 
