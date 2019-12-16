@@ -46,6 +46,9 @@ export default class HogTile extends Component {
           <div className="header">{hog.name}</div>
           {this.showHogDetails(hog)}
         </div>
+        <div className="extra content">
+          <button onClick={() => this.props.hideHog(hog.name)}>Hide Me</button>
+        </div>
       </div>
     );
   }

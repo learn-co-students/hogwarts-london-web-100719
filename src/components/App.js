@@ -7,7 +7,8 @@ import hogs from "../porkers_data";
 export default class App extends Component {
   state = {
     filtered: false,
-    sorted: null
+    sorted: null,
+    hidden: []
   };
 
   setFiltered = () => {
@@ -16,14 +17,25 @@ export default class App extends Component {
     });
   };
 
-  setSorted = (option) => {
+  setSorted = option => {
     this.setState({
       sorted: option
     });
   };
 
-  filteredHogs = () => {
+  hideHog = name => {
+    this.setState({ hidden: [...this.state.hidden, name] });
+  };
+
+  hiddenHogs = () => {
     const newHogs = [...hogs];
+    const { hidden } = this.state;
+    if (hidden.length) return newHogs.filter(hog => !hidden.includes(hog.name));
+    return newHogs;
+  };
+
+  filteredHogs = () => {
+    const newHogs = [...this.hiddenHogs()];
     if (this.state.filtered) {
       return newHogs.filter(hog => hog.greased);
     }
@@ -33,8 +45,15 @@ export default class App extends Component {
   sortedHogs = () => {
     const newHogs = [...this.filteredHogs()];
     const { sorted } = this.state;
-    if (sorted === "name")
-      return newHogs.sort((a, b) => a.name.localeCompare(b.name));
+
+    if (sorted === "name") {
+      return newHogs.sort((a, b) => a.name.localeCompare(b.name)) 
+    }
+
+    if (sorted === "weight") {
+      return newHogs.sort((a, b) => a.weight - b.weight)
+    }
+
     return newHogs;
   };
 
@@ -42,7 +61,7 @@ export default class App extends Component {
     return (
       <div className="App">
         <Nav setFiltered={this.setFiltered} setSorted={this.setSorted} />
-        <HogList hogs={this.sortedHogs()} />
+        <HogList hogs={this.sortedHogs()} hideHog={this.hideHog} />
       </div>
     );
   }

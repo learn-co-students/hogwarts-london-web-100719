@@ -6,7 +6,7 @@ export default class HogList extends Component {
     return (
       <div className="ui cards">
         {this.props.hogs.map((hog, index) => (
-          <HogTile key={index} hog={hog} />
+          <HogTile key={index} hog={hog} hideHog={this.props.hideHog} />
         ))}
       </div>
     );

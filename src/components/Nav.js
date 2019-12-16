@@ -12,6 +12,7 @@ const Nav = props => {
       <p>
         <button onClick={props.setFiltered}>Filter Greased Porkies</button>
         <button onClick={() => props.setSorted("name")}>Sort by Name</button>
+		<button onClick={() => props.setSorted("weight")}>Sort by Weight</button>
       </p>
     </div>
   );
